@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="Fresh Italian favorites and warm hospitality at Rondell's Pizza Shop.">
+	<title>Rondell's Pizza Shop | Italian Favorites</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+	<style>
+		:root {
+			--red: #b83232;
+			--deep-red: #8f2424;
+			--green: #245b3b;
+			--cream: #fffaf2;
+			--ink: #302b27;
+			--line: #eadfd3;
+		}
+		* { box-sizing: border-box; }
+		html { scroll-behavior: smooth; }
+		body {
+			margin: 0;
+			background: var(--cream);
+			color: var(--ink);
+			font: 16px/1.6 'DM Sans', sans-serif;
+		}
+		h1, h2, h3 { font-family: 'Playfair Display', Georgia, serif; }
+		.masthead {
+			padding: 2.5rem 1rem 2rem;
+			text-align: center;
+			color: white;
+			background: var(--red);
+			border-bottom: 7px solid var(--green);
+		}
+		.logo-mark { font-size: 2.7rem; line-height: 1.2; margin: 0; }
+		.tagline { margin: .5rem 0 0; font-style: italic; font-size: 1.1rem; }
+		.tomato { color: #fff1c9; }
+		nav { position: sticky; top: 0; z-index: 5; background: var(--green); }
+		nav ul {
+			display: flex;
+			justify-content: center;
+			flex-wrap: wrap;
+			gap: .5rem 2rem;
+			list-style: none;
+			margin: 0;
+			padding: .85rem 1rem;
+		}
+		nav a { color: white; text-decoration: none; font-weight: 700; }
+		nav a:hover, nav a:focus { color: #ffe3a8; text-decoration: underline; }
+		.container { max-width: 1050px; margin: 0 auto; padding: 2.5rem 1.25rem; }
+		section { scroll-margin-top: 4.5rem; }
+		.welcome { text-align: center; margin-bottom: 3.5rem; }
+		.welcome h2 { color: var(--green); font-size: 2rem; margin: 0 0 .5rem; }
+		.welcome > p { max-width: 700px; margin: 0 auto; }
+		.gallery { display: flex; flex-wrap: wrap; justify-content: center; gap: 1.25rem; margin-top: 1.75rem; }
+		.food-card {
+			flex: 1 1 250px;
+			max-width: 330px;
+			margin: 0;
+			padding: .75rem;
+			background: white;
+			border: 1px solid var(--line);
+			border-radius: 10px;
+			box-shadow: 0 5px 16px #302b2710;
+		}
+		.food-card img { display: block; width: 100%; height: 190px; object-fit: cover; border-radius: 6px; }
+		.food-card figcaption { padding: .6rem .25rem .1rem; color: var(--green); font-family: 'Playfair Display', Georgia, serif; font-weight: 700; }
+		#menu { margin-bottom: 3.5rem; }
+		.section-title { color: var(--red); text-align: center; font-size: 2.2rem; margin: 0 0 1.25rem; }
+		.table-wrap { overflow-x: auto; border: 1px solid var(--line); border-radius: 8px; background: white; }
+		table { width: 100%; border-collapse: collapse; }
+		th, td { padding: .85rem 1rem; text-align: left; border-bottom: 1px solid var(--line); }
+		thead th { background: var(--green); color: white; font-family: 'Playfair Display', Georgia, serif; }
+		.category th { background: #f7e9df; color: var(--deep-red); font-family: 'Playfair Display', Georgia, serif; font-size: 1.1rem; }
+		.price { text-align: right; white-space: nowrap; font-weight: 700; color: var(--green); }
+		tbody tr:last-child td { border-bottom: 0; }
+		.booking-row { display: flex; align-items: stretch; gap: 2rem; }
+		.contact-info, .reservation-box { flex: 1; }
+		.contact-info { padding: 1rem .5rem; }
+		.contact-info h3 { color: var(--green); font-size: 1.5rem; }
+		.reservation-box { padding: 1.5rem; border: 1px solid var(--line); border-top: 5px solid var(--red); border-radius: 8px; background: white; }
+		.form-group { margin-bottom: 1rem; }
+		label { display: block; margin-bottom: .35rem; font-weight: 700; }
+		input, select { width: 100%; min-height: 44px; padding: .65rem; border: 1px solid #cfc4b8; border-radius: 5px; font: inherit; background: white; }
+		input:focus, select:focus { outline: 3px solid #245b3b44; border-color: var(--green); }
+		button { width: 100%; padding: .8rem 1rem; border: 0; border-radius: 5px; background: var(--red); color: white; font: 700 1rem 'DM Sans', sans-serif; cursor: pointer; }
+		button:hover { background: var(--deep-red); }
+		footer { padding: 1.5rem 1rem; text-align: center; color: white; background: var(--green); }
+		@media (max-width: 650px) {
+			.logo-mark { font-size: 2.1rem; }
+			.booking-row { flex-direction: column; gap: .5rem; }
+			.section-title { font-size: 1.8rem; }
+			th, td { padding: .7rem; }
+		}
+	</style>
+</head>
+<body>
+	<header class="masthead" id="home">
+		<p class="tomato" aria-hidden="true">✦ 🇮🇹 ✦</p>
+		<h1 class="logo-mark">Rondell's Pizza Shop</h1>
+		<p class="tagline">The Best in Town</p>
+	</header>
+	<nav aria-label="Main navigation">
+		<ul>
+			<li><a href="#home">Home</a></li>
+			<li><a href="#menu">Menu</a></li>
+			<li><a href="#reservations">Reservations</a></li>
+		</ul>
+	</nav>
+
+	<main class="container">
+		<section class="welcome" aria-labelledby="welcome-title">
+			<h2 id="welcome-title">A Little Taste of Italy</h2>
+			<p>Come hungry and leave happy. We make Italian-inspired comfort food with generous servings, fresh ingredients, and plenty of heart.</p>
+			<div class="gallery">
+				<figure class="food-card">
+					<img src="https://images.unsplash.com/photo-1579751626657-72bc17010498?auto=format&amp;fit=crop&amp;w=700&amp;q=80" alt="Freshly baked pepperoni pizza with melted cheese">
+					<figcaption>Fresh from the oven</figcaption>
+				</figure>
+				<figure class="food-card">
+					<img src="https://images.unsplash.com/photo-1551183053-bf91a1d81141?auto=format&amp;fit=crop&amp;w=700&amp;q=80" alt="Creamy pasta served with herbs">
+					<figcaption>Made fresh every day</figcaption>
+				</figure>
+				<figure class="food-card">
+					<img src="https://images.unsplash.com/photo-1606313564200-e75d5e30476c?auto=format&amp;fit=crop&amp;w=700&amp;q=80" alt="Rich chocolate brownie dessert">
+					<figcaption>Save room for dessert</figcaption>
+				</figure>
+			</div>
+		</section>
+
+		<section id="menu" aria-labelledby="menu-title">
+			<h2 class="section-title" id="menu-title">Our Menu</h2>
+			<div class="table-wrap">
+				<table>
+					<thead><tr><th scope="col">Dish</th><th scope="col" class="price">Price</th></tr></thead>
+					<tbody>
+						<tr class="category"><th colspan="2" scope="colgroup">Appetizers</th></tr>
+						<tr><td>Garlic Bread Sticks</td><td class="price">$6.00</td></tr>
+						<tr><td>Pepperoni Pockets</td><td class="price">$8.00</td></tr>
+						<tr><td>Caesar Salad</td><td class="price">$9.00</td></tr>
+						<tr class="category"><th colspan="2" scope="colgroup">Main Dishes</th></tr>
+						<tr><td>Pepperoni Pizza, Detroit Style</td><td class="price">$18.00</td></tr>
+						<tr><td>Alfredo Pasta</td><td class="price">$16.00</td></tr>
+						<tr><td>Supreme Calzone</td><td class="price">$17.00</td></tr>
+						<tr class="category"><th colspan="2" scope="colgroup">Desserts</th></tr>
+						<tr><td>Chocolate Brownie</td><td class="price">$6.00</td></tr>
+						<tr><td>Peanut Butter Cookies</td><td class="price">$4.00</td></tr>
+						<tr><td>Vanilla Ice Cream</td><td class="price">$5.00</td></tr>
+					</tbody>
+				</table>
+			</div>
+		</section>
+
+		<section id="reservations" aria-labelledby="reservation-title">
+			<h2 class="section-title" id="reservation-title">Join Us for a Meal</h2>
+			<div class="booking-row">
+				<div class="contact-info">
+					<h3>Reservations</h3>
+					<p>Save a seat for your next get-together. Fill out the form and we’ll be ready to welcome you.</p>
+					<p><strong>Hours:</strong><br>Every day, 11:00 AM – 10:00 PM</p>
+				</div>
+				<form class="reservation-box" action="#reservations" method="get">
+					<div class="form-group">
+						<label for="name">Name</label>
+						<input id="name" name="name" type="text" autocomplete="name" required>
+					</div>
+					<div class="form-group">
+						<label for="email">Email</label>
+						<input id="email" name="email" type="email" autocomplete="email" required>
+					</div>
+					<div class="form-group">
+						<label for="reservation-time">Reservation date and time</label>
+						<input id="reservation-time" name="reservation-time" type="datetime-local" required>
+					</div>
+					<div class="form-group">
+						<label for="party-size">Party size</label>
+						<select id="party-size" name="party-size" required>
+							<option value="" disabled selected>Select party size</option>
+							<option value="1">1 guest</option>
+							<option value="2">2 guests</option>
+							<option value="3-4">3–4 guests</option>
+							<option value="5-6">5–6 guests</option>
+							<option value="7+">7 or more guests</option>
+						</select>
+					</div>
+					<button type="submit">Request a Reservation</button>
+				</form>
+			</div>
+		</section>
+	</main>
+	
+</body>
+</html>
